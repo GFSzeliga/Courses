@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TutorialsTeacher_ASPNETCORE.props" />
+</Project>
