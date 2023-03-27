@@ -18,10 +18,12 @@ namespace TutorialsTeacher_ASPNETCORE.Pages
             _config = config;
             KeyValue = GetValue();
             KeyValue2 = appIdentitySettingsAccessor.Value.Key;
+            _logger.LogError($"{KeyValue}");
         }
 
         public string GetValue()
         {
+
             return _config.GetValue<string>("MyCustomKey:Key");
         }
 

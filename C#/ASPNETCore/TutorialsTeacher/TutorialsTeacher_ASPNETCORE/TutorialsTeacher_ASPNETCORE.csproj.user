@@ -4,6 +4,7 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
+    <ActiveDebugProfile>TutorialsTeacher_ASPNETCORE</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Pashtet\Desktop\Projects\Courses\C#\ASPNETCore\TutorialsTeacher\TutorialsTeacher_ASPNETCORE\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
