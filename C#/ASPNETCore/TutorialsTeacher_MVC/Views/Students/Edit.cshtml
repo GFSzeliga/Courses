@@ -1,0 +1,72 @@
+﻿@model TutorialsTeacher_MVC.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger">Please write correct values</div>
+            <div class="form-group">
+                <input asp-for="StudentId" class="form-control" type="hidden"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentName" class="control-label"></label>
+                <input asp-for="StudentName" class="form-control" />
+                <span asp-validation-for="StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsActive" class="control-label"></label>
+                <input type="checkbox" asp-for="IsActive" value="true" data-val="true"/>
+                <span asp-validation-for="IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                @foreach (var gender in Model.Genders)
+                {
+                    <input type="radio" asp-for="Gender" value="@gender" id="Gender@(gender)" /> @gender <br />
+                }
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FavouriteWeekday" class="control-label"></label>
+                <select asp-for="FavouriteWeekday" asp-items="Html.GetEnumSelectList<WeekDay>()" class="control-label">
+                    <option value="">Choose a day</option>
+                </select>
+                <span asp-validation-for="FavouriteWeekday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewGender" class="control-label"></label>
+                <select asp-for="NewGender" asp-items="Model.NewGenders" class="control-label"></select>
+                <span asp-validation-for="NewGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="password" asp-for="Password" value="true" data-val="true"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
